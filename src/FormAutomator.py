@@ -14,7 +14,7 @@ from tkinter import filedialog
 from tkinter import *
 
 
-class gui:
+class FormAutomatorGUI:
     def __init__(self):
         self.input = None
         self.template = None
@@ -31,8 +31,9 @@ class gui:
         self.output_button = tk.Button(self.top, text='Set Output', width = 25,
                                        command=self.set_output)
         self.output_button.grid(row=2, column=0)
+        tk.Label(self.top, text='File Name Field').grid(row=3, column=0)
         self.file_name_field = tk.Entry(self.top)
-        self.file_name_field.grid(row=3)
+        self.file_name_field.grid(row=3, column=1)
         self.run_button = tk.Button(self.top, text='Run', 
                                     width=25, command=self.run)
         self.run_button.grid(row=4)
@@ -111,3 +112,9 @@ def csv_to_docs(csv, title, template_file, output_dir):
     for _, row in df.iterrows():
         new_doc = format_doc(doc, tags, row.values)
         new_doc.save(output_dir + os.sep + row[title] + '.docx')
+        
+
+def main():
+    gui = FormAutomatorGUI()
+    
+if __name__ == "__main__": main()
