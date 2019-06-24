@@ -1,0 +1,12 @@
+name: FormAutomator
+channels:
+ - default
+ - conda-forge
+dependencies:
+ - docx
+ - nb_conda
+ - numpy
+ - pandas
+ - requests
+ - scikit-learn
+ - yaml
